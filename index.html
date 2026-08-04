@@ -60,6 +60,24 @@
             color: var(--accent);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--text-heading);
+        }
+
         .nav-btn {
             background-color: var(--whatsapp);
             color: #fff;
@@ -266,10 +284,13 @@
 
     <!-- Header Navigation -->
     <header>
-        <a href="#" class="logo">AB <span>Digital Studio</span></a>
-        <a href="https://wa.me/910000000000?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="nav-btn" target="_blank">
-            <i class="fab fa-whatsapp"></i> Chat Now
-        </a>
+        <a href="index.html" class="logo">AB <span>Digital Studio</span></a>
+        <div class="nav-right">
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="https://wa.me/910000000000?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="nav-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat Now
+            </a>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -281,7 +302,7 @@
             <a href="https://wa.me/910000000000?text=Hi,%20I%20would%20like%20a%20free%20consultation%20for%20my%20business." class="btn-primary" target="_blank">
                 <i class="fab fa-whatsapp"></i> Get Free Consultation
             </a>
-            <a href="#services" class="btn-secondary">Explore Services</a>
+            <a href="services.html" class="btn-secondary">Explore Services</a>
         </div>
     </div>
 
@@ -299,8 +320,8 @@
             </div>
             <div class="card">
                 <i class="fas fa-search-dollar"></i>
-                <h3>Local SEO & GMB</h3>
-                <p>Rank higher on Google Maps & Local Search to drive local foot traffic and customer inquiries directly.</p>
+                <h3>SEO & GMB Optimizations</h3>
+                <p>Rank higher on Google Maps & Search to drive direct business inquiries and customer calls.</p>
             </div>
             <div class="card">
                 <i class="fas fa-chart-line"></i>
@@ -343,7 +364,7 @@
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="faq-answer">
-                Yes, we implement clean SEO code standards and optimize Google Business Profiles to boost local search rankings.
+                Yes, we implement clean SEO code standards and optimize Google Business Profiles to boost search rankings.
             </div>
         </div>
     </section>
