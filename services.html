@@ -42,20 +42,33 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-heading);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
 
-        .logo span {
+        .logo-img {
+            height: 42px;
+            width: auto;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .logo-text span {
             color: var(--accent);
         }
 
@@ -269,11 +282,14 @@
 
     <!-- Header Navigation -->
     <header>
-        <a href="index.html" class="logo">AB <span>Digital Studio</span></a>
+        <a href="index.html" class="logo-container">
+            <img src="1785742772178.png" alt="AB Digital Studio" class="logo-img">
+            <span class="logo-text">AB <span>Digital Studio</span></span>
+        </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="services.html" style="color: var(--accent);">Services</a>
-            <a href="https://wa.me/910000000000?text=Hi%20AB%20Digital%20Studio,%20I%20have%20a%20project%20inquiry." class="nav-btn" target="_blank">
+            <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20have%20a%20project%20inquiry." class="nav-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> WhatsApp Us
             </a>
         </div>
@@ -302,7 +318,7 @@
                     <li><i class="fas fa-check-circle"></i> Free Hosting & SSL Certificate Setup</li>
                     <li><i class="fas fa-check-circle"></i> Integrated WhatsApp & Contact Forms</li>
                 </ul>
-                <a href="https://wa.me/910000000000?text=Hi,%20I%20want%20to%20discuss%20Website%20Design%20services." class="btn-consult" target="_blank">
+                <a href="https://wa.me/917690916649?text=Hi,%20I%20want%20to%20discuss%20Website%20Design%20services." class="btn-consult" target="_blank">
                     <i class="fab fa-whatsapp"></i> Inquire for Web Design
                 </a>
             </div>
@@ -322,8 +338,8 @@
                     <li><i class="fas fa-check-circle"></i> On-Page & Technical Website SEO</li>
                     <li><i class="fas fa-check-circle"></i> Local Map Keyword Ranking Strategy</li>
                 </ul>
-                <a href="https://wa.me/910000000000?text=Hi,%20I%20want%20to%20discuss%20SEO%20%26%20GMB%20services." class="btn-consult" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Inquire for Local SEO
+                <a href="https://wa.me/917690916649?text=Hi,%20I%20want%20to%20discuss%20SEO%20%26%20GMB%20services." class="btn-consult" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Inquire for SEO & GMB
                 </a>
             </div>
         </div>
@@ -342,7 +358,7 @@
                     <li><i class="fas fa-check-circle"></i> Creative Ad Design & Copywriting</li>
                     <li><i class="fas fa-check-circle"></i> Weekly Performance Tracking</li>
                 </ul>
-                <a href="https://wa.me/910000000000?text=Hi,%20I%20want%20to%20discuss%20Digital%20Marketing." class="btn-consult" target="_blank">
+                <a href="https://wa.me/917690916649?text=Hi,%20I%20want%20to%20discuss%20Digital%20Marketing." class="btn-consult" target="_blank">
                     <i class="fab fa-whatsapp"></i> Inquire for Marketing
                 </a>
             </div>
@@ -359,7 +375,7 @@
                 <div class="info-card">
                     <i class="fas fa-phone-alt"></i>
                     <h4>Direct Call</h4>
-                    <p>+91 9116 111 222</p>
+                    <p>+91 7690916649</p>
                 </div>
                 <div class="info-card">
                     <i class="fab fa-whatsapp"></i>
@@ -376,7 +392,7 @@
     </div>
 
     <!-- Floating WhatsApp Action -->
-    <a href="https://wa.me/910000000000?text=Hi%20AB%20Digital%20Studio!" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio!" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
