@@ -65,8 +65,8 @@
             --bg-main: #0B0F17;
             --bg-card: #151C28;
             --bg-card-hover: #1E283A;
-            --accent: #3B82F6;
-            --accent-hover: #2563EB;
+            --accent: #00FFCC; /* Neon Cyan */
+            --neon-glow: #00FF88; /* Neon Green Glow */
             --whatsapp: #25D366;
             --whatsapp-hover: #1EBE5D;
             --text-heading: #FFFFFF;
@@ -88,56 +88,66 @@
             line-height: 1.6;
         }
 
-        /* Large Circular Netflix Splash Screen */
+        /* 3D Neon Intro Splash Screen */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: #0B0F17;
+            background-color: #070A0F;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 99999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            perspective: 1000px; /* Enables true 3D spatial depth */
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
         .netflix-logo {
-            width: 240px;
-            height: 240px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
             border: 3px solid var(--accent);
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
-            animation: netflixZoom 1.4s ease-out forwards;
+            box-shadow: 0 0 25px var(--accent), 0 0 50px var(--neon-glow);
+            animation: netflix3DZoom 2.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
-        @keyframes netflixZoom {
+        @keyframes netflix3DZoom {
             0% {
-                transform: scale(0.4);
+                transform: translateZ(-600px) rotateX(25deg) rotateY(-20deg) scale(0.3);
                 opacity: 0;
+                filter: brightness(0.5) blur(6px);
             }
-            50% {
+            40% {
                 opacity: 1;
-                transform: scale(1.1);
+                transform: translateZ(100px) rotateX(-5deg) rotateY(10deg) scale(1.15);
+                filter: brightness(1.3) blur(0px);
+                box-shadow: 0 0 40px var(--accent), 0 0 80px var(--neon-glow);
+            }
+            75% {
+                opacity: 1;
+                transform: translateZ(250px) rotateX(0deg) rotateY(0deg) scale(1.6);
+                box-shadow: 0 0 60px var(--accent), 0 0 120px var(--neon-glow);
             }
             100% {
-                transform: scale(1.4);
+                transform: translateZ(500px) scale(2.2);
                 opacity: 0;
             }
         }
 
         .splash-text-logo {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #FFFFFF;
-            animation: netflixZoom 1.4s ease-out forwards;
+            animation: netflix3DZoom 2.8s ease-out forwards;
         }
 
         .splash-text-logo span {
             color: var(--accent);
+            text-shadow: 0 0 15px var(--accent);
         }
 
         .splash-hidden {
@@ -174,6 +184,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--accent);
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
         }
 
         .logo-text {
@@ -231,14 +242,15 @@
 
         .badge {
             display: inline-block;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(0, 255, 204, 0.1);
             color: var(--accent);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 20px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.15);
         }
 
         .hero h1 {
@@ -298,9 +310,9 @@
             align-items: center;
             gap: 8px;
             margin-top: 15px;
-            background: rgba(59, 130, 246, 0.15);
+            background: rgba(0, 255, 204, 0.1);
             color: var(--accent);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(0, 255, 204, 0.3);
             padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
@@ -311,7 +323,7 @@
 
         .btn-card-action:hover {
             background: var(--accent);
-            color: #ffffff;
+            color: #000000;
         }
 
         /* Hero Image Showcase */
@@ -454,7 +466,7 @@
 </head>
 <body>
 
-    <!-- Large Circular Intro Splash Screen -->
+    <!-- 3D Neon Intro Splash Screen -->
     <div id="splash-screen">
         <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="netflix-logo" onerror="this.outerHTML='<div class=\'splash-text-logo\'>AB <span>Digital Studio</span></div>';">
     </div>
@@ -584,8 +596,9 @@
             }
         };
 
-        window.addEventListener('DOMContentLoaded', () => setTimeout(dismissSplash, 1400));
-        setTimeout(dismissSplash, 2200);
+        // Dismiss splash screen smoothly after 2.8 seconds
+        window.addEventListener('DOMContentLoaded', () => setTimeout(dismissSplash, 2800));
+        setTimeout(dismissSplash, 3500); // Fail-safe fallback
 
         // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
