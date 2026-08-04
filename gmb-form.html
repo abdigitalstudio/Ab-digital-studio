@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMB Vendor Intake Form | A.B. Digital Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-main: #0B0F17;
+            --bg-card: #151C28;
+            --accent: #3B82F6;
+            --whatsapp: #25D366;
+            --text-heading: #FFFFFF;
+            --text-body: #94A3B8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --input-bg: #0B0F17;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: rgba(11, 15, 23, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            text-decoration: none;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* GMB Headline Caption */
+        .gmb-caption {
+            text-align: center;
+            background: linear-gradient(135deg, #1E283A 0%, #151C28 100%);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .gmb-caption h1 {
+            color: var(--text-heading);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .gmb-caption p {
+            color: var(--text-body);
+            font-size: 1rem;
+        }
+
+        .gmb-caption .highlight {
+            color: #25D366;
+            font-weight: 600;
+        }
+
+        /* Form Card Styling */
+        .form-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--text-heading);
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-heading);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: #FFF;
+            font-size: 0.95rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+        }
+
+        /* Checkbox Grid */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--input-bg);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            color: var(--text-heading);
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #2563EB;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-text">A.B. <span>DIGITAL STUDIO</span></a>
+        <span style="font-size: 0.85rem; color: var(--accent); font-weight: 600;">FIELD EXECUTIVE KIT</span>
+    </header>
+
+    <div class="container">
+
+        <!-- Catchy GMB Caption Header -->
+        <div class="gmb-caption">
+            <h1>📍 Get Your Business Verified & Listed on Google Maps</h1>
+            <p>Dominate local search in Alwar! Fill out the intake details below to get your <span class="highlight">Google Business Profile (GMB)</span> live and attract local customers daily.</p>
+        </div>
+
+        <form action="https://formspree.io/f/xbjnqkyw" method="POST">
+            
+            <!-- Section 1 -->
+            <div class="form-section">
+                <div class="section-title">
+                    <i class="fas fa-store"></i> 1. Vendor Information Intake Form (N.A.P. Data)
+                </div>
+
+                <div class="form-group">
+                    <label>Business Name (As per Shop Board)</label>
+                    <input type="text" name="business_name" class="form-control" placeholder="e.g. Sharma Electronics" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Owner / Contact Person</label>
+                    <input type="text" name="owner_name" class="form-control" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Primary Phone Number</label>
+                    <input type="tel" name="primary_phone" class="form-control" placeholder="+91 0000000000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" name="whatsapp_phone" class="form-control" placeholder="+91 0000000000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Primary Business Category</label>
+                    <input type="text" name="business_category" class="form-control" placeholder="e.g. Grocery Store, Restaurant, Web Designer" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Physical Address</label>
+                    <textarea name="full_address" class="form-control" rows="3" placeholder="Shop No, Building, Street, Area" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Landmark / Area PIN Code</label>
+                    <input type="text" name="landmark_pincode" class="form-control" placeholder="e.g. Near Bus Stand, 301001" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Working Hours / Days</label>
+                    <input type="text" name="working_hours" class="form-control" placeholder="e.g. Mon-Sat: 9:00 AM - 8:00 PM" required>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+                <div class="section-title">
+                    <i class="fas fa-camera"></i> 2. Google Verification Required Assets
+                </div>
+                
+                <div class="checkbox-grid">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="asset_shop_board" value="Yes">
+                        Clear Front Photo of Shop Board
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="asset_visiting_card" value="Yes">
+                        Photo of Visiting Card / Bill Book
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="asset_inside_photos" value="Yes">
+                        3-4 Photos of Inside Shop / Work Area
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="asset_gps_location" value="Yes">
+                        GPS Location Pin Saved / Shared
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="asset_street_photo" value="Yes">
+                        Nearby Landmark / Street View Photo
+                    </label>
+
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="asset_video_call_informed" value="Yes">
+                        Owner Informed About Video Call / OTP
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i> Submit Vendor Details
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>
