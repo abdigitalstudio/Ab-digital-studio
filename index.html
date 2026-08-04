@@ -88,6 +88,55 @@
             line-height: 1.6;
         }
 
+        /* Netflix Style Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #0B0F17;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .netflix-logo {
+            width: 180px;
+            height: auto;
+            object-fit: contain;
+            animation: netflixIntro 2.5s ease-out forwards;
+        }
+
+        @keyframes netflixIntro {
+            0% {
+                transform: scale(0.4);
+                opacity: 0;
+                filter: brightness(0.5) blur(4px);
+            }
+            30% {
+                opacity: 1;
+                filter: brightness(1.2) blur(0px);
+            }
+            80% {
+                transform: scale(1.15);
+                opacity: 1;
+                filter: brightness(1);
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+                filter: brightness(1.5);
+            }
+        }
+
+        .splash-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
         /* Header / Nav */
         header {
             position: fixed;
@@ -397,6 +446,11 @@
 </head>
 <body>
 
+    <!-- Netflix Style Splash Screen Intro -->
+    <div id="splash-screen">
+        <img src="./1785742772178.png" alt="AB Digital Studio Logo" class="netflix-logo">
+    </div>
+
     <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo-container">
@@ -513,8 +567,17 @@
         <p>&copy; 2026 AB Digital Studio. All rights reserved.</p>
     </footer>
 
-    <!-- Simple Accordion Script -->
+    <!-- JavaScript Scripts -->
     <script>
+        // Hide Netflix Splash Screen after animation finishes (2.5s)
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.classList.add('splash-hidden');
+            }, 2500);
+        });
+
+        // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
