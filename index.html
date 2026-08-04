@@ -88,7 +88,7 @@
             line-height: 1.6;
         }
 
-        /* Intro Splash Overlay */
+        /* Large Circular Netflix Splash Screen */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -100,44 +100,44 @@
             justify-content: center;
             align-items: center;
             z-index: 99999;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .netflix-logo {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+            animation: netflixZoom 1.4s ease-out forwards;
+        }
+
+        @keyframes netflixZoom {
+            0% {
+                transform: scale(0.4);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
         }
 
         .splash-text-logo {
             font-size: 2rem;
             font-weight: 800;
             color: #FFFFFF;
-            letter-spacing: 1px;
-            animation: netflixIntro 1.2s ease-out forwards;
+            animation: netflixZoom 1.4s ease-out forwards;
         }
 
         .splash-text-logo span {
             color: var(--accent);
-        }
-
-        .netflix-logo {
-            width: 260px;
-            max-width: 80%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            animation: netflixIntro 1.2s ease-out forwards;
-        }
-
-        @keyframes netflixIntro {
-            0% {
-                transform: scale(0.6);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1.2);
-                opacity: 0;
-            }
         }
 
         .splash-hidden {
@@ -169,12 +169,11 @@
         }
 
         .logo-img {
-            height: 40px;
-            width: auto;
-            border-radius: 6px;
-            object-fit: contain;
-            background: rgba(255,255,255,0.05);
-            padding: 2px;
+            height: 42px;
+            width: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
         }
 
         .logo-text {
@@ -455,7 +454,7 @@
 </head>
 <body>
 
-    <!-- Intro Splash Screen -->
+    <!-- Large Circular Intro Splash Screen -->
     <div id="splash-screen">
         <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="netflix-logo" onerror="this.outerHTML='<div class=\'splash-text-logo\'>AB <span>Digital Studio</span></div>';">
     </div>
@@ -578,7 +577,6 @@
 
     <!-- JavaScript Scripts -->
     <script>
-        // Force dismiss splash screen quickly (1.2 seconds)
         const dismissSplash = () => {
             const splash = document.getElementById('splash-screen');
             if (splash) {
@@ -586,9 +584,8 @@
             }
         };
 
-        // Trigger on load or safety fallback
-        window.addEventListener('DOMContentLoaded', () => setTimeout(dismissSplash, 1200));
-        setTimeout(dismissSplash, 2000); // Fail-safe timer
+        window.addEventListener('DOMContentLoaded', () => setTimeout(dismissSplash, 1400));
+        setTimeout(dismissSplash, 2200);
 
         // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
