@@ -88,7 +88,7 @@
             line-height: 1.6;
         }
 
-        /* Netflix Style Splash Screen */
+        /* Splash Screen Container */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -100,41 +100,48 @@
             justify-content: center;
             align-items: center;
             z-index: 99999;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* Fallback Text Badge if Image path fails */
+        .splash-text-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            animation: netflixIntro 1.5s ease-out forwards;
+        }
+
+        .splash-text-logo span {
+            color: var(--accent);
         }
 
         .netflix-logo {
             width: 180px;
             height: auto;
             object-fit: contain;
-            animation: netflixIntro 2.5s ease-out forwards;
+            animation: netflixIntro 1.5s ease-out forwards;
         }
 
         @keyframes netflixIntro {
             0% {
-                transform: scale(0.4);
+                transform: scale(0.5);
                 opacity: 0;
-                filter: brightness(0.5) blur(4px);
             }
-            30% {
+            50% {
                 opacity: 1;
-                filter: brightness(1.2) blur(0px);
-            }
-            80% {
-                transform: scale(1.15);
-                opacity: 1;
-                filter: brightness(1);
+                transform: scale(1.1);
             }
             100% {
-                transform: scale(1.8);
+                transform: scale(1.4);
                 opacity: 0;
-                filter: brightness(1.5);
             }
         }
 
         .splash-hidden {
-            opacity: 0;
-            visibility: hidden;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
         }
 
         /* Header / Nav */
@@ -446,15 +453,15 @@
 </head>
 <body>
 
-    <!-- Netflix Style Splash Screen Intro -->
+    <!-- Intro Splash Screen -->
     <div id="splash-screen">
-        <img src="./1785742772178.png" alt="AB Digital Studio Logo" class="netflix-logo">
+        <img src="1785742772178.png" alt="AB Digital Studio" class="netflix-logo" onerror="this.outerHTML='<div class=\'splash-text-logo\'>AB <span>Digital Studio</span></div>';">
     </div>
 
     <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo-container">
-            <img src="./1785742772178.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
+            <img src="1785742772178.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">AB <span>Digital Studio</span></span>
         </a>
         <div class="nav-right">
@@ -569,13 +576,15 @@
 
     <!-- JavaScript Scripts -->
     <script>
-        // Hide Netflix Splash Screen after animation finishes (2.5s)
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const splash = document.getElementById('splash-screen');
+        // Dismiss Splash Screen safely after 1.5s
+        function dismissSplash() {
+            const splash = document.getElementById('splash-screen');
+            if (splash) {
                 splash.classList.add('splash-hidden');
-            }, 2500);
-        });
+            }
+        }
+
+        setTimeout(dismissSplash, 1500);
 
         // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
