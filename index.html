@@ -182,6 +182,27 @@
             background: var(--bg-card);
         }
 
+        .btn-card-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-card-action:hover {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
         /* Hero Image Showcase */
         .hero-banner {
             width: 100%;
@@ -223,6 +244,9 @@
             border-radius: 12px;
             overflow: hidden;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -240,10 +264,11 @@
             padding: 25px;
         }
 
-        .card i {
+        .card i.card-icon {
             font-size: 1.8rem;
             color: var(--accent);
             margin-bottom: 15px;
+            display: block;
         }
 
         .card h3 {
@@ -326,6 +351,7 @@
         </a>
         <div class="nav-right">
             <a href="services.html" class="nav-link">Services</a>
+            <a href="gmb-form.html" class="nav-link">GMB Form</a>
             <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="nav-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> Chat Now
             </a>
@@ -358,7 +384,7 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80" alt="Custom Web Design" class="card-img">
                 <div class="card-body">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-laptop-code card-icon"></i>
                     <h3>Custom Web Design</h3>
                     <p>Fully responsive, lightning-fast HTML & WordPress sites designed to fit your unique brand identity.</p>
                 </div>
@@ -366,15 +392,18 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=600&q=80" alt="SEO & GMB Optimization" class="card-img">
                 <div class="card-body">
-                    <i class="fas fa-search-dollar"></i>
+                    <i class="fas fa-search-dollar card-icon"></i>
                     <h3>SEO & GMB Optimizations</h3>
                     <p>Rank higher on Google Maps & Search to drive direct business inquiries and customer calls.</p>
+                    <a href="gmb-form.html" class="btn-card-action">
+                        <i class="fas fa-file-signature"></i> Fill GMB Intake Form
+                    </a>
                 </div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=600&q=80" alt="Digital Marketing" class="card-img">
                 <div class="card-body">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chart-line card-icon"></i>
                     <h3>Digital Marketing</h3>
                     <p>Strategic online campaigns and social media solutions built to generate quality leads for your business.</p>
                 </div>
