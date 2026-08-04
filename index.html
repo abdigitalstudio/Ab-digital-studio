@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://abdigitalstudio.github.io/Ab-digital-studio/">
     <meta property="og:title" content="Web Design & Local SEO Agency in Alwar | AB Digital Studio">
     <meta property="og:description" content="Custom web design & local GMB rank strategies to generate quality leads for businesses in Alwar.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png">
 
     <!-- Schema.org Local Business Structured Data -->
     <script type="application/ld+json">
@@ -27,7 +27,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "AB Digital Studio",
-      "image": "https://abdigitalstudio.github.io/Ab-digital-studio/1785742772178.png",
+      "image": "https://abdigitalstudio.github.io/Ab-digital-studio/logo.png",
       "telephone": "+917690916649",
       "url": "https://abdigitalstudio.github.io/Ab-digital-studio/",
       "address": {
@@ -88,7 +88,7 @@
             line-height: 1.6;
         }
 
-        /* Splash Screen Container */
+        /* Intro Splash Overlay */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -100,16 +100,15 @@
             justify-content: center;
             align-items: center;
             z-index: 99999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
 
-        /* Fallback Text Badge if Image path fails */
         .splash-text-logo {
             font-size: 2rem;
             font-weight: 800;
             color: #FFFFFF;
             letter-spacing: 1px;
-            animation: netflixIntro 1.5s ease-out forwards;
+            animation: netflixIntro 1.2s ease-out forwards;
         }
 
         .splash-text-logo span {
@@ -117,23 +116,26 @@
         }
 
         .netflix-logo {
-            width: 180px;
+            width: 260px;
+            max-width: 80%;
             height: auto;
             object-fit: contain;
-            animation: netflixIntro 1.5s ease-out forwards;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: netflixIntro 1.2s ease-out forwards;
         }
 
         @keyframes netflixIntro {
             0% {
-                transform: scale(0.5);
+                transform: scale(0.6);
                 opacity: 0;
             }
             50% {
                 opacity: 1;
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
             100% {
-                transform: scale(1.4);
+                transform: scale(1.2);
                 opacity: 0;
             }
         }
@@ -167,7 +169,7 @@
         }
 
         .logo-img {
-            height: 45px;
+            height: 40px;
             width: auto;
             border-radius: 6px;
             object-fit: contain;
@@ -455,13 +457,13 @@
 
     <!-- Intro Splash Screen -->
     <div id="splash-screen">
-        <img src="1785742772178.png" alt="AB Digital Studio" class="netflix-logo" onerror="this.outerHTML='<div class=\'splash-text-logo\'>AB <span>Digital Studio</span></div>';">
+        <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="netflix-logo" onerror="this.outerHTML='<div class=\'splash-text-logo\'>AB <span>Digital Studio</span></div>';">
     </div>
 
     <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo-container">
-            <img src="1785742772178.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
+            <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">AB <span>Digital Studio</span></span>
         </a>
         <div class="nav-right">
@@ -576,15 +578,17 @@
 
     <!-- JavaScript Scripts -->
     <script>
-        // Dismiss Splash Screen safely after 1.5s
-        function dismissSplash() {
+        // Force dismiss splash screen quickly (1.2 seconds)
+        const dismissSplash = () => {
             const splash = document.getElementById('splash-screen');
             if (splash) {
                 splash.classList.add('splash-hidden');
             }
-        }
+        };
 
-        setTimeout(dismissSplash, 1500);
+        // Trigger on load or safety fallback
+        window.addEventListener('DOMContentLoaded', () => setTimeout(dismissSplash, 1200));
+        setTimeout(dismissSplash, 2000); // Fail-safe timer
 
         // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
