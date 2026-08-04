@@ -43,20 +43,33 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-heading);
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
 
-        .logo span {
+        .logo-img {
+            height: 42px;
+            width: auto;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .logo-text span {
             color: var(--accent);
         }
 
@@ -284,10 +297,13 @@
 
     <!-- Header Navigation -->
     <header>
-        <a href="index.html" class="logo">AB <span>Digital Studio</span></a>
+        <a href="index.html" class="logo-container">
+            <img src="1785742772178.png" alt="AB Digital Studio" class="logo-img">
+            <span class="logo-text">AB <span>Digital Studio</span></span>
+        </a>
         <div class="nav-right">
             <a href="services.html" class="nav-link">Services</a>
-            <a href="https://wa.me/910000000000?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="nav-btn" target="_blank">
+            <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="nav-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> Chat Now
             </a>
         </div>
@@ -299,7 +315,7 @@
         <h1>Build A Powerful Digital Presence For Your Business</h1>
         <p>We create fast, modern, mobile-responsive websites and optimization strategies tailored to convert browsers into paying customers.</p>
         <div class="cta-group">
-            <a href="https://wa.me/910000000000?text=Hi,%20I%20would%20like%20a%20free%20consultation%20for%20my%20business." class="btn-primary" target="_blank">
+            <a href="https://wa.me/917690916649?text=Hi,%20I%20would%20like%20a%20free%20consultation%20for%20my%20business." class="btn-primary" target="_blank">
                 <i class="fab fa-whatsapp"></i> Get Free Consultation
             </a>
             <a href="services.html" class="btn-secondary">Explore Services</a>
@@ -370,7 +386,7 @@
     </section>
 
     <!-- Floating WhatsApp Action -->
-    <a href="https://wa.me/910000000000?text=Hi%20AB%20Digital%20Studio,%20I%20have%20a%20question!" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20have%20a%20question!" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
