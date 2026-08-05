@@ -180,10 +180,20 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-heading);
+            white-space: nowrap;
         }
 
         .logo-text span {
             color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         .nav-right {
@@ -213,12 +223,48 @@
             font-weight: 600;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             transition: 0.3s;
         }
 
         .nav-btn:hover {
             background-color: var(--whatsapp-hover);
+        }
+
+        /* Mobile Header Responsiveness */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-main);
+                border-bottom: 1px solid var(--border-color);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-right.active {
+                display: flex;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: left;
+                padding: 8px 0;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
         }
 
         /* Hero Section */
@@ -440,7 +486,6 @@
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
             background-color: var(--whatsapp-hover);
         }
 
@@ -465,7 +510,12 @@
             <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">AB <span>Digital Studio</span></span>
         </a>
-        <div class="nav-right">
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-right" id="nav-right">
             <a href="services.html" class="nav-link">Services</a>
             <a href="gmb-form.html" class="nav-link">GMB Form</a>
             <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="nav-btn" target="_blank">
@@ -586,6 +636,24 @@
 
         window.addEventListener('DOMContentLoaded', () => setTimeout(dismissSplash, 1400));
         setTimeout(dismissSplash, 2200);
+
+        // Mobile Menu Toggle Script
+        const menuToggle = document.getElementById('menu-toggle');
+        const navRight = document.getElementById('nav-right');
+
+        menuToggle.addEventListener('click', () => {
+            navRight.classList.toggle('active');
+            
+            // Toggle hamburger icon between bars and X
+            const icon = menuToggle.querySelector('i');
+            if (navRight.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
 
         // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
