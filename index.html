@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Dark Theme Variables (Default) */
         :root {
             --bg-dark: #07090E;
             --bg-card: rgba(15, 23, 42, 0.75);
@@ -53,6 +54,26 @@
             --text-muted: #94A3B8;
             --border: rgba(255, 255, 255, 0.1);
             --border-hover: rgba(0, 255, 204, 0.5);
+            --header-bg: rgba(7, 9, 14, 0.85);
+            --grid-line: rgba(255, 255, 255, 0.03);
+            --secondary-btn-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Light Theme Overrides */
+        [data-theme="light"] {
+            --bg-dark: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --bg-card-hover: #F1F5F9;
+            --accent: #0284C7;
+            --accent-glow: rgba(2, 132, 199, 0.2);
+            --whatsapp: #25D366;
+            --text-heading: #0F172A;
+            --text-muted: #475569;
+            --border: rgba(0, 0, 0, 0.1);
+            --border-hover: rgba(2, 132, 199, 0.5);
+            --header-bg: rgba(248, 250, 252, 0.85);
+            --grid-line: rgba(0, 0, 0, 0.03);
+            --secondary-btn-bg: #E2E8F0;
         }
 
         * {
@@ -61,14 +82,14 @@
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
             background-color: var(--bg-dark);
-            /* Interactive Cyber Grid Background */
             background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
             background-size: 40px 40px;
             color: var(--text-muted);
             line-height: 1.6;
@@ -80,7 +101,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 9, 14, 0.85);
+            background: var(--header-bg);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -119,7 +140,7 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         .nav-link {
@@ -132,6 +153,27 @@
 
         .nav-link:hover {
             color: var(--text-heading);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-heading);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         .btn-nav {
@@ -162,14 +204,14 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 255, 204, 0.1);
+            background: var(--accent-glow);
             color: var(--accent);
             padding: 6px 18px;
             border-radius: 30px;
             font-size: 0.82rem;
             font-weight: 600;
             margin-bottom: 24px;
-            border: 1px solid rgba(0, 255, 204, 0.25);
+            border: 1px solid var(--accent);
         }
 
         .hero h1 {
@@ -202,7 +244,7 @@
 
         .btn-primary {
             background: var(--accent);
-            color: #000;
+            color: #fff;
             padding: 14px 32px;
             border-radius: 8px;
             text-decoration: none;
@@ -212,12 +254,16 @@
             box-shadow: 0 0 20px var(--accent-glow);
         }
 
+        [data-theme="dark"] .btn-primary {
+            color: #000;
+        }
+
         .btn-primary:hover {
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--secondary-btn-bg);
             color: var(--text-heading);
             padding: 14px 32px;
             border-radius: 8px;
@@ -230,12 +276,12 @@
 
         .btn-secondary:hover {
             background: var(--bg-card);
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: var(--border-hover);
         }
 
         /* Moving Marquee Banner */
         .marquee-wrapper {
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--grid-line);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 16px 0;
@@ -305,7 +351,7 @@
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.1);
+            box-shadow: 0 10px 30px var(--accent-glow);
         }
 
         .card-icon {
@@ -340,7 +386,7 @@
         .step-num {
             font-size: 2.5rem;
             font-weight: 800;
-            color: rgba(0, 255, 204, 0.2);
+            color: var(--accent-glow);
             position: absolute;
             top: 20px;
             right: 24px;
@@ -411,10 +457,11 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.3rem; }
             .hero { padding-top: 120px; }
+            .nav-link { display: none; }
         }
     </style>
 </head>
-<body>
+<body data-theme="dark">
 
     <!-- Header Navigation -->
     <header>
@@ -425,6 +472,12 @@
         <div class="nav-right">
             <a href="services.html" class="nav-link">Services</a>
             <a href="gmb-form.html" class="nav-link">GMB Form</a>
+            
+            <!-- Dark / Light Mode Switch Button -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
+
             <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20inquire%20about%20a%20website." class="btn-nav" target="_blank">
                 <i class="fab fa-whatsapp"></i> Chat Now
             </a>
@@ -550,8 +603,9 @@
         <p>&copy; 2026 AB Digital Studio. All rights reserved.</p>
     </footer>
 
-    <!-- Accordion Script -->
+    <!-- Accordion & Theme Toggle Script -->
     <script>
+        // FAQ Accordion Script
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
@@ -564,6 +618,33 @@
                 }
             });
         });
+
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check local storage for existing theme preference
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+        updateToggleIcon(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon(newTheme);
+        });
+
+        function updateToggleIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
     </script>
 </body>
 </html>
