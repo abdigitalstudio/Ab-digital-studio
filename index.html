@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="qfcSxtsSgyUhTOdI8l4eAfwz-hX6NSoon-tjoCX6b4U" />
 
-    <!-- SEO Meta Tags -->
+    <!-- On-Page SEO Meta Tags -->
     <title>Web Design & SEO Agency in Alwar | AB Digital Studio</title>
     <meta name="description" content="AB Digital Studio offers custom website design, local SEO, and Google Business Profile optimization in Alwar, Rajasthan. Grow your business online today.">
     <meta name="keywords" content="Web Design Alwar, SEO Agency Alwar, Google Business Profile Optimization, Website Developer Rajasthan, AB Digital Studio">
@@ -50,7 +50,6 @@
             --bg-surface: #0f0d1d;
             --bg-card: #151328;
             --primary: #3b82f6;
-            --primary-hover: #2563eb;
             --accent: #8b5cf6;
             --whatsapp: #25d366;
             --text-heading: #ffffff;
@@ -431,7 +430,7 @@
         </div>
     </div>
 
-    <!-- Multi-Page Header Navigation -->
+    <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo-container">
             <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio Logo" class="logo-img" onerror="this.style.display='none'">
@@ -445,10 +444,7 @@
         <nav class="nav-links" id="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="services.html">Services</a>
-            <a href="portfolio.html">Portfolio</a> <!-- भविष्य का पेज -->
-            <a href="about.html">About Us</a>      <!-- भविष्य का पेज -->
             <a href="gmb-form.html">GMB Form</a>
-            <a href="contact.html">Contact</a>       <!-- भविष्य का पेज -->
             <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20want%20to%20start%20a%20project." class="btn-nav-action" target="_blank">
                 Start Project <i class="fas fa-arrow-right"></i>
             </a>
@@ -515,7 +511,7 @@
         </div>
     </section>
 
-    <!-- Multi-Page Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -526,9 +522,8 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="gmb-form.html">GMB Form</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -560,7 +555,6 @@
 
     <!-- Scripts -->
     <script>
-        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
 
@@ -568,7 +562,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Form Redirect to WhatsApp
         document.getElementById('quote-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
