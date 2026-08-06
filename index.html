@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Search Console Verification Tag -->
     <meta name="google-site-verification" content="qfcSxtsSgyUhTOdI8l4eAfwz-hX6NSoon-tjoCX6b4U" />
 
-    <!-- Primary On-Page SEO Meta Tags -->
-    <title>AB Digital Studio | Web Design & Local SEO Agency</title>
-    <meta name="description" content="AB Digital Studio delivers custom website development, Google Business Profile optimization, and local SEO strategies designed to generate leads.">
+    <title>AB Digital Studio | Premier Web Design & Local SEO Agency</title>
+    <meta name="description" content="AB Digital Studio is Alwar's leading agency for custom web development, Google Business Profile (GMB) optimization, and local lead generation.">
     <meta name="keywords" content="Web Design Alwar, SEO Agency Alwar, Google Business Profile Optimization, Website Developer Rajasthan, AB Digital Studio">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://abdigitalstudio.github.io/Ab-digital-studio/">
@@ -19,42 +16,23 @@
     <meta property="og:url" content="https://abdigitalstudio.github.io/Ab-digital-studio/">
     <meta property="og:title" content="AB Digital Studio | High-Impact Web Design & SEO">
     <meta property="og:description" content="Custom web design & local GMB ranking strategies to grow your business.">
-    <meta property="og:image" content="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png">
 
-    <!-- Schema.org Local Business Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "AB Digital Studio",
-      "image": "https://abdigitalstudio.github.io/Ab-digital-studio/logo.png",
-      "telephone": "+917690916649",
-      "url": "https://abdigitalstudio.github.io/Ab-digital-studio/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Alwar",
-        "addressRegion": "Rajasthan",
-        "addressCountry": "IN"
-      },
-      "priceRange": "₹₹"
-    }
-    </script>
-
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-dark: #07090E;
-            --bg-card: #0E131F;
-            --bg-card-hover: #141C2E;
+            --bg-dark: #05070A;
+            --bg-card: rgba(14, 19, 31, 0.7);
+            --bg-card-hover: rgba(20, 28, 46, 0.9);
             --accent: #00FFCC;
-            --accent-dim: rgba(0, 255, 204, 0.12);
+            --accent-glow: rgba(0, 255, 204, 0.25);
             --whatsapp: #25D366;
             --text-heading: #FFFFFF;
             --text-muted: #94A3B8;
-            --border: rgba(255, 255, 255, 0.07);
-            --border-hover: rgba(0, 255, 204, 0.3);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(0, 255, 204, 0.4);
         }
 
         * {
@@ -77,7 +55,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 9, 14, 0.85);
+            background: rgba(5, 7, 10, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -94,17 +72,9 @@
             text-decoration: none;
         }
 
-        .logo-img {
-            height: 38px;
-            width: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1.5px solid var(--accent);
-        }
-
         .logo-text {
             font-size: 1.25rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-heading);
             letter-spacing: -0.02em;
         }
@@ -116,7 +86,7 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
         }
 
         .nav-link {
@@ -145,13 +115,11 @@
             transition: 0.2s;
         }
 
-        .btn-nav:hover {
-            opacity: 0.9;
-        }
+        .btn-nav:hover { opacity: 0.9; }
 
         /* Hero Section */
         .hero {
-            padding: 160px 6% 80px;
+            padding: 160px 6% 60px;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -161,19 +129,19 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--accent-dim);
+            background: rgba(0, 255, 204, 0.1);
             color: var(--accent);
             padding: 6px 18px;
             border-radius: 30px;
             font-size: 0.82rem;
             font-weight: 600;
             margin-bottom: 24px;
-            border: 1px solid rgba(0, 255, 204, 0.2);
+            border: 1px solid rgba(0, 255, 204, 0.25);
         }
 
         .hero h1 {
             color: var(--text-heading);
-            font-size: 3.4rem;
+            font-size: 3.5rem;
             line-height: 1.15;
             font-weight: 800;
             letter-spacing: -0.03em;
@@ -196,7 +164,7 @@
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .btn-primary {
@@ -208,11 +176,11 @@
             font-weight: 700;
             font-size: 0.95rem;
             transition: 0.2s;
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 20px var(--accent-dim);
         }
 
         .btn-secondary {
@@ -232,51 +200,62 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Stats Bar */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        /* Moving Marquee Banner */
+        .marquee-wrapper {
+            background: rgba(255, 255, 255, 0.02);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            padding: 30px 0;
-            margin-bottom: 80px;
+            padding: 16px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 60px;
         }
 
-        .stat-item h3 {
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
             color: var(--text-heading);
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-right: 40px;
         }
 
-        .stat-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
+        .marquee-item i { color: var(--accent); }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Bento Grid Services Section */
+        /* Section Layouts */
         section {
-            padding: 80px 6%;
+            padding: 60px 6%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
             color: var(--text-heading);
             font-size: 2.2rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -0.02em;
         }
 
+        /* Services Bento Grid */
         .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
@@ -284,11 +263,9 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 36px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
             transition: 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .bento-card:hover {
@@ -300,44 +277,48 @@
         .card-icon {
             font-size: 2rem;
             color: var(--accent);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .bento-card h3 {
             color: var(--text-heading);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 12px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        .bento-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
+        /* 3-Step Process Section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
 
-        .card-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .process-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 16px;
+            position: relative;
         }
 
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(0, 255, 204, 0.2);
+            position: absolute;
+            top: 20px;
+            right: 24px;
         }
+
+        /* FAQ Accordion */
+        .faq-container { max-width: 800px; margin: 0 auto; }
 
         .faq-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
             margin-bottom: 16px;
-            overflow: hidden;
         }
 
         .faq-question {
@@ -351,7 +332,6 @@
             font-weight: 600;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             cursor: pointer;
         }
 
@@ -362,7 +342,7 @@
             font-size: 0.95rem;
         }
 
-        /* Floating WhatsApp Action */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 28px;
@@ -382,9 +362,7 @@
             transition: 0.2s;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-        }
+        .whatsapp-float:hover { transform: scale(1.08); }
 
         footer {
             text-align: center;
@@ -402,10 +380,9 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo-container">
-            <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">AB <span>Digital Studio</span></span>
         </a>
         <div class="nav-right">
@@ -419,66 +396,80 @@
 
     <!-- Hero Section -->
     <div class="hero">
-        <span class="pill-badge"><i class="fas fa-bolt"></i> Web Design & Local SEO Agency</span>
-        <h1>We Build High-Converting Websites That <span>Grow Businesses</span></h1>
-        <p>Custom mobile-responsive websites, Google Business Profile setups, and local search strategies designed to turn online searches into paying clients.</p>
+        <span class="pill-badge"><i class="fas fa-bolt"></i> Premier Web Design & SEO Agency</span>
+        <h1>Engineered For Local Businesses To <span>Dominate Online</span></h1>
+        <p>Custom mobile websites, Google Business Profile setups, and targeted local search strategies that turn online searches into paying phone calls.</p>
         
         <div class="cta-group">
             <a href="https://wa.me/917690916649?text=Hi,%20I%20would%20like%20a%20free%20consultation%20for%20my%20business." class="btn-primary" target="_blank">
                 Start Project <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="services.html" class="btn-secondary">View Services</a>
-        </div>
-
-        <!-- Metric Trust Bar -->
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Mobile Responsive</p>
-            </div>
-            <div class="stat-item">
-                <h3>3-7 Days</h3>
-                <p>Fast Project Launch</p>
-            </div>
-            <div class="stat-item">
-                <h3>Top Rank</h3>
-                <p>Google Maps Focus</p>
-            </div>
+            <a href="gmb-form.html" class="btn-secondary">Fill GMB Form</a>
         </div>
     </div>
 
-    <!-- Services Bento Grid -->
+    <!-- Moving Marquee Banner -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> WEB DEVELOPMENT</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> GOOGLE MAPS SEO</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> BRAND IDENTITY</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> SPEED OPTIMIZATION</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> LOCAL LEAD GENERATION</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> WEB DEVELOPMENT</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> GOOGLE MAPS SEO</span>
+            <span class="marquee-item"><i class="fas fa-check-circle"></i> BRAND IDENTITY</span>
+        </div>
+    </div>
+
+    <!-- Services Section -->
     <section id="services">
         <div class="section-header">
-            <h2>High-Impact Digital Solutions</h2>
+            <h2>Our Core Expertise</h2>
         </div>
         
         <div class="bento-grid">
             <div class="bento-card">
-                <div>
-                    <i class="fas fa-laptop-code card-icon"></i>
-                    <h3>Custom Web Design</h3>
-                    <p>Fast, high-converting websites optimized for desktop, tablet, and mobile viewing.</p>
-                </div>
-                <a href="services.html" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
+                <i class="fas fa-laptop-code card-icon"></i>
+                <h3>Custom Web Development</h3>
+                <p>Lightning-fast, mobile-optimized websites built to convert visitors into loyal clients.</p>
             </div>
 
             <div class="bento-card">
-                <div>
-                    <i class="fas fa-map-marker-alt card-icon"></i>
-                    <h3>GMB & Local SEO</h3>
-                    <p>Optimize your Google Maps presence to generate local phone calls and direct inquiries.</p>
-                </div>
-                <a href="gmb-form.html" class="card-link">Fill GMB Form <i class="fas fa-chevron-right"></i></a>
+                <i class="fas fa-map-marker-alt card-icon"></i>
+                <h3>GMB & Google Maps SEO</h3>
+                <p>Optimize your Google Business Profile to claim the top spot for local business searches.</p>
             </div>
 
             <div class="bento-card">
-                <div>
-                    <i class="fas fa-chart-line card-icon"></i>
-                    <h3>Digital Strategy</h3>
-                    <p>Tailored online marketing campaigns built to increase reach and maximize lead conversion.</p>
-                </div>
-                <a href="https://wa.me/917690916649" class="card-link">Contact Us <i class="fas fa-chevron-right"></i></a>
+                <i class="fas fa-rocket card-icon"></i>
+                <h3>Digital Growth Strategy</h3>
+                <p>Tailored digital branding and lead-generation funnels crafted for business expansion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Step Process Section -->
+    <section>
+        <div class="section-header">
+            <h2>Seamless Process From Start To Launch</h2>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <span class="step-num">01</span>
+                <h3>Discovery & Audit</h3>
+                <p>We analyze your business goals, target audience, and local competitors to build a custom roadmap.</p>
+            </div>
+            <div class="process-card">
+                <span class="step-num">02</span>
+                <h3>Design & Optimization</h3>
+                <p>We craft high-impact web design, build responsive layouts, and configure local SEO data.</p>
+            </div>
+            <div class="process-card">
+                <span class="step-num">03</span>
+                <h3>Testing & Launch</h3>
+                <p>We perform speed and mobile quality checks before launching your site live to bring in leads.</p>
             </div>
         </div>
     </section>
@@ -492,37 +483,27 @@
         <div class="faq-container">
             <div class="faq-item">
                 <button class="faq-question">
-                    How long does it take to complete a website project?
+                    How quickly can my website be completed?
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
-                    Standard business websites typically take 3 to 7 business days from initial content delivery to final launch.
+                    Standard business projects are typically designed, tested, and launched in 3 to 7 business days.
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question">
-                    Will my website work well on mobile devices?
+                    Why is Google Business Profile (GMB) optimization essential?
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="faq-answer">
-                    Yes. Every site we build is 100% mobile-responsive and optimized for fast loading speed across all screen sizes.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    Can you help my business rank higher on Google Maps?
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    Yes, we specialize in local SEO and Google Business Profile optimization to improve your local search visibility.
+                    Most local customers search on Google Maps first. Proper GMB setup ensures your business appears right at the top when people search for your services nearby.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating WhatsApp Action -->
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/917690916649?text=Hi%20AB%20Digital%20Studio,%20I%20have%20a%20question!" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
