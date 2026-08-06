@@ -16,6 +16,26 @@
     <meta property="og:url" content="https://abdigitalstudio.github.io/Ab-digital-studio/">
     <meta property="og:title" content="AB Digital Studio | High-Impact Web Design & SEO">
     <meta property="og:description" content="Custom web design & local GMB ranking strategies to grow your business.">
+    <meta property="og:image" content="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png">
+
+    <!-- Schema.org Local Business Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AB Digital Studio",
+      "image": "https://abdigitalstudio.github.io/Ab-digital-studio/logo.png",
+      "telephone": "+917690916649",
+      "url": "https://abdigitalstudio.github.io/Ab-digital-studio/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alwar",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "IN"
+      },
+      "priceRange": "₹₹"
+    }
+    </script>
 
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,16 +43,16 @@
     
     <style>
         :root {
-            --bg-dark: #05070A;
-            --bg-card: rgba(14, 19, 31, 0.7);
-            --bg-card-hover: rgba(20, 28, 46, 0.9);
+            --bg-dark: #07090E;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(30, 41, 59, 0.9);
             --accent: #00FFCC;
             --accent-glow: rgba(0, 255, 204, 0.25);
             --whatsapp: #25D366;
             --text-heading: #FFFFFF;
             --text-muted: #94A3B8;
-            --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(0, 255, 204, 0.4);
+            --border: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(0, 255, 204, 0.5);
         }
 
         * {
@@ -45,6 +65,11 @@
 
         body {
             background-color: var(--bg-dark);
+            /* Interactive Cyber Grid Background */
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
             color: var(--text-muted);
             line-height: 1.6;
             overflow-x: hidden;
@@ -55,7 +80,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(5, 7, 10, 0.85);
+            background: rgba(7, 9, 14, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -70,6 +95,14 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
+        }
+
+        .logo-img {
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid var(--accent);
         }
 
         .logo-text {
@@ -272,6 +305,7 @@
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
             transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.1);
         }
 
         .card-icon {
@@ -300,6 +334,7 @@
             padding: 32px;
             border-radius: 16px;
             position: relative;
+            backdrop-filter: blur(10px);
         }
 
         .step-num {
@@ -319,6 +354,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             margin-bottom: 16px;
+            backdrop-filter: blur(10px);
         }
 
         .faq-question {
@@ -383,6 +419,7 @@
     <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo-container">
+            <img src="https://abdigitalstudio.github.io/Ab-digital-studio/logo.png" alt="AB Digital Studio" class="logo-img" onerror="this.style.display='none'">
             <span class="logo-text">AB <span>Digital Studio</span></span>
         </a>
         <div class="nav-right">
